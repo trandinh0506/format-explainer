@@ -6,5 +6,10 @@ fetch("https://form-caro.herokuapp.com/", {
 document.getElementById("btn").addEventListener("click", () => {
   const Name = document.getElementById("name").value;
   const group = document.getElementById("group").value;
-  console.log(Name, group);
+  fetch("https://form-caro.herokuapp.com/register", {
+    mode: "no-cors",
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ player: Name, group: group }),
+  }).then((data) => console.log(data));
 });

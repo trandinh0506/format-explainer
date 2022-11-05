@@ -1,4 +1,5 @@
 fetch("https://form-caro.herokuapp.com/", {
+  mode: "no-cors",
   method: "GET",
   headers: { "Content-Type": "application/json" },
 }).then((data) => console.log(data));
